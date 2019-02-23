@@ -1,0 +1,8 @@
+;set _root_.scala.collection.Seq(shellPrompt := { _ => "" },SettingKey[_root_.scala.Option[_root_.sbt.File]]("sbtStructureOutputFile") in _root_.sbt.Global := _root_.scala.Some(_root_.sbt.file("/private/var/folders/m5/44y83yds1297lch8l61gwwq4hmhls0/T/sbt-structure.xml")),SettingKey[_root_.java.lang.String]("sbtStructureOptions") in _root_.sbt.Global := "download");apply -cp "/Users/camila.rouyet/Library/Application Support/IntelliJIdea2018.2/Scala/launcher/sbt-structure-1.0.jar" org.jetbrains.sbt.CreateTasks;*/*:dumpStructure
+exit
+List(1,2,3,4).map(_ + 10).filter(_ % 2 == 0).map(_ * 3)         List(36,42)
+List(1,2,3,4).map(_ + 10).filter(_ % 2 == 0).map(_ * 3)
+println({var x = 1+1})
+println({var x = 1+1} )
+println({   var x = 1+1    x +1 }) 
+:
