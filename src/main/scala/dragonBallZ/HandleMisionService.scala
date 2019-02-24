@@ -1,18 +1,20 @@
 package dragonBallZ
 
-case class HandleMisionService(mision: Mision) {
+import dragonBallZ.model.{Group, Mision, Team}
 
-  def applyTeamAction(team: Team): Option[Goup] = {
-    fight(team, mision)
+case class HandleMisionService(misions: List[Mision]) {
+
+  def applyTeamAction(team: Team): Option[Group] = {
+    doMisions(Some(team),misions)
   }
 
-  def fight(group: Goup, vs: Goup): Option[Goup] = {
+  def fight(group: Option[Group], vs: Group): Option[Group] = {
 
-    def loop(group: Option[Goup], vs: Option[Goup]): Option[Goup] = group.flatMap(
-      t1 => t1.getFighters() match {
+    def loop(group: Option[Group], vs: Option[Group]): Option[Group] = group.flatMap(
+      t1 => t1.getFighters match {
         case Nil   => group
         case h1::_ =>
-          vs.flatMap(t2 => t2.getFighters() match {
+          vs.flatMap(t2 => t2.getFighters match {
             case Nil   => group
             case h2::_ =>
               val team1 = t1.fight(h2)
@@ -21,28 +23,18 @@ case class HandleMisionService(mision: Mision) {
           })
       })
 
-      loop(Some(group),Some(vs))
+      loop(group,Some(vs))
   }
 
-  def doMision(fighters: List[Fighter], vs: List[Fighter]): List[Fighter] = {
-    fighters match {
-      case Nil     => fighters
-      case h1::t1  =>
-        vs match {
-          case Nil => fighters
-          case h2 :: t2 =>
-            val team1 = h1.fight(h2).map(_ :: t1).getOrElse(t1)
-            val team2 = h2.fight(h1).map(_ :: t2).getOrElse(t2)
-            doMision(team1, team2)
-        }
-    }
+  def doMisions(group: Option[Group], misions: List[Group]): Option[Group]  = {
+    misions.foldLeft(group)((group: Option[Group],vs: Group)=> fight(group, vs))
   }
 
   def betterTeamForTheMision(t1: Team, t2: Team): String = {
 
     val moreWarriorsLeft = (t1: Team, t2: Team) =>
-      fight(t1,mision).map(_.getFighters().length).getOrElse(0)
-        .compare(fight(t2,mision).map(_.getFighters().length).getOrElse(0))
+      doMisions(Some(t1),misions).map(_.getFighters.length).getOrElse(0)
+        .compare(doMisions(Some(t2),misions).map(_.getFighters.length).getOrElse(0))
 
     val moreTeamEnergy = (t1: Team, t2: Team) => t1.energy.compare(t2.energy)
 
