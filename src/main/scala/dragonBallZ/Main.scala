@@ -12,8 +12,8 @@ object Main {
     val misionHandler: HandleMisionService = HandleMisionService(mision)
 
     println("ApplyTeamAction: "+ misionHandler.applyTeamAction(team) + "\n\n")
-    println("Warriors Left " + team.name + ": " +  misionHandler.fight(team,team2).warriors.map(w => w.name +": "+w.energy )+ "\n")
-    println("Warriors Left " + team2.name + ": " + misionHandler.fight(team2,team).warriors.map(w => w.name +": "+w.energy )+ "\n\n")
+    println("Warriors Left " + team.name + ": " +  misionHandler.fight(Some(team),team2)+ "\n")
+    println("Warriors Left " + team2.name + ": " + misionHandler.fight(Some(team2),team)+ "\n\n")
     println("Better Team For The Mision: " + misionHandler.betterTeamForTheMision(team, team2))
   }
 }

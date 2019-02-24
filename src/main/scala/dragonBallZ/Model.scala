@@ -3,6 +3,8 @@ package dragonBallZ
 case class Team(name: String, warriors: List[Fighter]) extends Fighter {
   val energy: Int  = warriors.map(_.energy).sum
 
+  override def fight(vs: Fighter): Option[Team] = Option(this.substractEnergy(vs)).filter(_.energy > 0)
+
   def substractEnergy(vs: Fighter): Team = this.warriors match {
     case Nil  => this
     case h::t => this.copy(warriors = h.fight(vs).map(_::t).getOrElse(t))
