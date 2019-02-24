@@ -1,5 +1,7 @@
 package dragonBallZ
 
+import dragonBallZ.model.{Activity, Mision, Team, Warrior}
+
 object Main {
   def main(args: Array[String]) {
 
