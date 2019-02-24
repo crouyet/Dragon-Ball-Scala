@@ -2,39 +2,47 @@ package dragonBallZ
 
 case class HandleMisionService(mision: Mision) {
 
-  def applyTeamAction(team: Team): List[Fighter] = {
-    doMision(team.warriors, mision.activities)
+  def applyTeamAction(team: Team): Option[Goup] = {
+    fight(team, mision)
   }
 
-  def fight(team: Option[Team], vs: Team): Option[Team] = {
-    team.flatMap(
-      t => t.warriors match {
-        case _ if vs.warriors.isEmpty => team
-        case h::_            =>
-          val h2::_ = vs.warriors
-          val t1 = t.fight(h2)
-          val t2 = vs.substractEnergy(h)
-          fight(t1, t2)
-      }
-    )
+  def fight(group: Goup, vs: Goup): Option[Goup] = {
+
+    def loop(group: Option[Goup], vs: Option[Goup]): Option[Goup] = group.flatMap(
+      t1 => t1.getFighters() match {
+        case Nil   => group
+        case h1::_ =>
+          vs.flatMap(t2 => t2.getFighters() match {
+            case Nil   => group
+            case h2::_ =>
+              val team1 = t1.fight(h2)
+              val team2 = t2.substractEnergy(h1)
+              loop(team1, Some(team2))
+          })
+      })
+
+      loop(Some(group),Some(vs))
   }
 
   def doMision(fighters: List[Fighter], vs: List[Fighter]): List[Fighter] = {
     fighters match {
-      case _ if vs.isEmpty => fighters
-      case Nil             => fighters
-      case h::t            =>
-        val w = h.fight(vs.head).map(_::t).getOrElse(t)
-        val m = vs.head.fight(h).map(_::vs.tail).getOrElse(vs.tail)
-        doMision(w, m)
+      case Nil     => fighters
+      case h1::t1  =>
+        vs match {
+          case Nil => fighters
+          case h2 :: t2 =>
+            val team1 = h1.fight(h2).map(_ :: t1).getOrElse(t1)
+            val team2 = h2.fight(h1).map(_ :: t2).getOrElse(t2)
+            doMision(team1, team2)
+        }
     }
   }
 
   def betterTeamForTheMision(t1: Team, t2: Team): String = {
 
     val moreWarriorsLeft = (t1: Team, t2: Team) =>
-      doMision(t1.warriors,mision.activities).length
-        .compare(doMision(t2.warriors,mision.activities).length)
+      fight(t1,mision).map(_.getFighters().length).getOrElse(0)
+        .compare(fight(t2,mision).map(_.getFighters().length).getOrElse(0))
 
     val moreTeamEnergy = (t1: Team, t2: Team) => t1.energy.compare(t2.energy)
 

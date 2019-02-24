@@ -1,5 +1,13 @@
 package dragonBallZ
 
+trait Goup {
+  this: Fighter =>
+  def getFighters(): List[Fighter]
+
+  override def fight(vs: Fighter): Option[Goup]
+  override def substractEnergy(fighter: Fighter): Goup
+}
+
 trait Fighter {
   val name: String
   val energy: Int
