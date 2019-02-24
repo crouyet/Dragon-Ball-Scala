@@ -5,7 +5,33 @@ import dragonBallZ.model.{Group, Mision, Team}
 case class HandleMisionService(misions: List[Mision]) {
 
   def applyTeamAction(team: Team): Option[Group] = {
-    doMisions(Some(team),misions)
+    doMisions(team)
+  }
+
+  def betterTeamForTheMision(t1: Team, t2: Team): Option[Group] = {
+
+    val moreTeamEnergy = (t1: Group, t2: Option[Group]) =>
+      t1.energy.compare(t2.map(_.energy).getOrElse(0))
+
+    val moreWarriorsLeft = (t1: Group, t2: Option[Group]) =>
+      t1.getFighters.length.compare(t2.map(_.getFighters.length).getOrElse(0))
+
+    def compare(t1: Option[Group],t2: Option[Group]): Option[Group] = {
+      (t1, t2) match {
+        case (None, None) => None
+        case (_, None) => t1
+        case (None, _) => t2
+        case _ =>
+          t1.flatMap(_.compare(moreWarriorsLeft, t2))
+            .orElse(t1.flatMap(_.compare(moreTeamEnergy, t2)))
+      }
+    }
+
+    compare(doMisions(t1), doMisions(t2))
+  }
+
+  private def doMisions(group: Group): Option[Group]  = {
+    misions.foldLeft(Option(group))((group: Option[Group],vs: Group)=> fight(group, vs))
   }
 
   def fight(group: Option[Group], vs: Group): Option[Group] = {
@@ -23,23 +49,6 @@ case class HandleMisionService(misions: List[Mision]) {
           })
       })
 
-      loop(group,Some(vs))
-  }
-
-  def doMisions(group: Option[Group], misions: List[Group]): Option[Group]  = {
-    misions.foldLeft(group)((group: Option[Group],vs: Group)=> fight(group, vs))
-  }
-
-  def betterTeamForTheMision(t1: Team, t2: Team): String = {
-
-    val moreWarriorsLeft = (t1: Team, t2: Team) =>
-      doMisions(Some(t1),misions).map(_.getFighters.length).getOrElse(0)
-        .compare(doMisions(Some(t2),misions).map(_.getFighters.length).getOrElse(0))
-
-    val moreTeamEnergy = (t1: Team, t2: Team) => t1.energy.compare(t2.energy)
-
-    t1.compare(moreWarriorsLeft, t2)
-      .orElse(t1.compare(moreTeamEnergy, t2))
-      .map(_.name).getOrElse("Ninguno")
+    loop(group,Some(vs))
   }
 }

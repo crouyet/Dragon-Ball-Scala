@@ -9,9 +9,4 @@ trait Fighter {
 
   def substractEnergy(fighter: Fighter): Fighter
 
-  def compare(f: (Fighter, Fighter) => Int, vs: Fighter): Option[Fighter] =  f(this, vs) match {
-    case 0  => None
-    case 1  => Some(this)
-    case -1 => Some(vs)
-  }
 }

@@ -9,6 +9,12 @@ trait Group extends Fighter {
 
   override def substractEnergy(fighter: Fighter): Group
 
+  def compare(f: (Group, Option[Group]) => Int, vs: Option[Group]): Option[Group] =  f(this, vs) match {
+    case 0  => None
+    case 1  => Some(this)
+    case -1 => vs
+  }
+
   /*def fight(vs: Group): Option[Group] = {
     Option(this.getFighters match {
       case Nil => this
