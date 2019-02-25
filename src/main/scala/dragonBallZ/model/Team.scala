@@ -1,12 +1,15 @@
 package dragonBallZ.model
 
-case class Team(name: String, warriors: List[Fighter]) extends Group with Fighter {
+case class Team(name: String, warriors: List[Warrior]) extends Group with Fighter {
   val energy: Int  = warriors.map(_.energy).sum
 
-  def substractEnergy(vs: Fighter): Team = this.warriors match {
+  override def fight(vs: Fighter): Option[Team] =
+    Option(this.substractEnergy(vs)).filter(_.energy > 0)
+
+  override def substractEnergy(vs: Fighter): Team = this.warriors match {
     case Nil  => this
     case h::t => this.copy(warriors = h.fight(vs).map(_::t).getOrElse(t))
   }
 
-  override def getFighters: List[Fighter] = this.warriors
+  override def fighters: List[Warrior] = this.warriors
 }

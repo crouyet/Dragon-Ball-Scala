@@ -2,10 +2,9 @@ package dragonBallZ.model
 
 trait Group extends Fighter {
 
-  def getFighters: List[Fighter]
+  def fighters: List[Fighter]
 
-  override def fight(vs: Fighter): Option[Group] =
-    Option(this.substractEnergy(vs)).filter(_.energy > 0)
+  override def fight(vs: Fighter): Option[Group]
 
   override def substractEnergy(fighter: Fighter): Group
 
@@ -14,6 +13,8 @@ trait Group extends Fighter {
     case 1  => Some(this)
     case -1 => vs
   }
+
+  override def toString: String = name +": " + fighters.map(f => f.name+ " -> " + f.energy)
 
   /*def fight(vs: Group): Option[Group] = {
     Option(this.getFighters match {
