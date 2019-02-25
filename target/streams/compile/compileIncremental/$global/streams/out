@@ -2,74 +2,32 @@
 [0m[[0m[0mdebug[0m] [0m[0mInitial source changes: [0m
 [0m[[0m[0mdebug[0m] [0m[0m	removed:Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0m	added: Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0m	modified: Set(/Users/camila.rouyet/DESPEGAR/estudio/scala/src/main/scala/dragonBallZ/model/Group.scala, /Users/camila.rouyet/DESPEGAR/estudio/scala/src/main/scala/dragonBallZ/HandleMisionService.scala, /Users/camila.rouyet/DESPEGAR/estudio/scala/src/main/scala/dragonBallZ/model/Team.scala, /Users/camila.rouyet/DESPEGAR/estudio/scala/src/main/scala/dragonBallZ/model/Mision.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	modified: Set(/Users/camila.rouyet/DESPEGAR/estudio/scala/src/main/scala/dragonBallZ/Main.scala)[0m
 [0m[[0m[0mdebug[0m] [0m[0mInvalidated products: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0mExternal API changes: API Changes: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0mModified binary dependencies: Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0mInitial directly invalidated classes: Set(dragonBallZ.model.Group, dragonBallZ.HandleMisionService, dragonBallZ.model.Team, dragonBallZ.model.Mision)[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial directly invalidated classes: Set(dragonBallZ.Main)[0m
 [0m[[0m[0mdebug[0m] [0m[0m[0m
 [0m[[0m[0mdebug[0m] [0m[0mSources indirectly invalidated by:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	product: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0m	binary dep: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0m	external source: Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated classes: Set(dragonBallZ.model.Group, dragonBallZ.HandleMisionService, dragonBallZ.model.Team, dragonBallZ.model.Mision)[0m
-[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated sources:Set(/Users/camila.rouyet/DESPEGAR/estudio/scala/src/main/scala/dragonBallZ/model/Group.scala, /Users/camila.rouyet/DESPEGAR/estudio/scala/src/main/scala/dragonBallZ/HandleMisionService.scala, /Users/camila.rouyet/DESPEGAR/estudio/scala/src/main/scala/dragonBallZ/model/Team.scala, /Users/camila.rouyet/DESPEGAR/estudio/scala/src/main/scala/dragonBallZ/model/Mision.scala)[0m
-[0m[[0m[0minfo[0m] [0m[0mCompiling 4 Scala sources to /Users/camila.rouyet/DESPEGAR/estudio/scala/target/scala-2.12/classes ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated classes: Set(dragonBallZ.Main)[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated sources:Set(/Users/camila.rouyet/DESPEGAR/estudio/scala/src/main/scala/dragonBallZ/Main.scala)[0m
+[0m[[0m[0minfo[0m] [0m[0mCompiling 1 Scala source to /Users/camila.rouyet/DESPEGAR/estudio/scala/target/scala-2.12/classes ...[0m
 [0m[[0m[0mdebug[0m] [0m[0mGetting org.scala-sbt:compiler-bridge_2.12:1.2.5:compile for Scala 2.12.8[0m
 [0m[[0m[0mdebug[0m] [0m[0mGetting org.scala-sbt:compiler-bridge_2.12:1.2.5:compile for Scala 2.12.8[0m
-[0m[[0m[0mdebug[0m] [0m[0m[zinc] Running cached compiler 7ae9f94f for Scala compiler version 2.12.8[0m
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] Running cached compiler 66a3efc8 for Scala compiler version 2.12.8[0m
 [0m[[0m[0mdebug[0m] [0m[0m[zinc] The Scala compiler is invoked with:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	-bootclasspath[0m
 [0m[[0m[0mdebug[0m] [0m[0m	/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/classes:/Users/camila.rouyet/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.12.8.jar[0m
 [0m[[0m[0mdebug[0m] [0m[0m	-classpath[0m
 [0m[[0m[0mdebug[0m] [0m[0m	/Users/camila.rouyet/DESPEGAR/estudio/scala/target/scala-2.12/classes[0m
-[0m[[0m[0mdebug[0m] [0m[0mScala compilation took 5.849886875 s[0m
+[0m[[0m[0mdebug[0m] [0m[0mScala compilation took 20.947466347 s[0m
 [0m[[0m[0minfo[0m] [0m[0mDone compiling.[0m
-[0m[[0m[0mdebug[0m] [0m[0mInvalidating (transitively) by inheritance from dragonBallZ.model.Group...[0m
-[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: Set(dragonBallZ.model.Group)[0m
-[0m[[0m[0mdebug[0m] [0m[0mIncluding dragonBallZ.model.Mision by dragonBallZ.model.Group[0m
-[0m[[0m[0mdebug[0m] [0m[0mIncluding dragonBallZ.model.Team by dragonBallZ.model.Group[0m
-[0m[[0m[0mdebug[0m] [0m[0mInvalidated by transitive inheritance dependency: Set(dragonBallZ.model.Mision, dragonBallZ.model.Group, dragonBallZ.model.Team)[0m
-[0m[[0m[0mdebug[0m] [0m[0mThe following modified names cause invalidation of dragonBallZ.HandleMisionService: Set(UsedName(fighters,[Default]))[0m
-[0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of dragonBallZ.Main. This dependency is not being considered for invalidation.[0m
-[0m[[0m[0mdebug[0m] [0m[0mThe following modified names cause invalidation of dragonBallZ.HandleMisionService: Set(UsedName(fighters,[Default]))[0m
-[0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of dragonBallZ.model.Mision. This dependency is not being considered for invalidation.[0m
-[0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of dragonBallZ.model.Team. This dependency is not being considered for invalidation.[0m
-[0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of dragonBallZ.Main. This dependency is not being considered for invalidation.[0m
-[0m[[0m[0mdebug[0m] [0m[0mThe following modified names cause invalidation of dragonBallZ.HandleMisionService: Set(UsedName(fighters,[Default]))[0m
-[0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of dragonBallZ.Main. This dependency is not being considered for invalidation.[0m
-[0m[[0m[0mdebug[0m] [0m[0mChange NamesChange(dragonBallZ.model.Group,ModifiedNames(changes = UsedName(getFighters,[Default]), UsedName(fighters,[Default]))) invalidates 4 classes due to The dragonBallZ.model.Group has the following regular definitions changed:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	UsedName(getFighters,[Default]), UsedName(fighters,[Default]).[0m
-[0m[[0m[0mdebug[0m] [0m[0m	> by transitive inheritance: Set(dragonBallZ.model.Mision, dragonBallZ.model.Group, dragonBallZ.model.Team)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	> [0m
-[0m[[0m[0mdebug[0m] [0m[0m	> by member reference: Set(dragonBallZ.HandleMisionService)[0m
-[0m[[0m[0mdebug[0m] [0m[0m        [0m
-[0m[[0m[0mdebug[0m] [0m[0mInvalidating (transitively) by inheritance from dragonBallZ.model.Team...[0m
-[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: Set(dragonBallZ.model.Team)[0m
-[0m[[0m[0mdebug[0m] [0m[0mInvalidated by transitive inheritance dependency: Set(dragonBallZ.model.Team)[0m
-[0m[[0m[0mdebug[0m] [0m[0mThe following modified names cause invalidation of dragonBallZ.HandleMisionService: Set(UsedName(fighters,[Default]))[0m
-[0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of dragonBallZ.Main. This dependency is not being considered for invalidation.[0m
-[0m[[0m[0mdebug[0m] [0m[0mChange NamesChange(dragonBallZ.model.Team,ModifiedNames(changes = UsedName(getFighters,[Default]), UsedName(fighters,[Default]))) invalidates 2 classes due to The dragonBallZ.model.Team has the following regular definitions changed:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	UsedName(getFighters,[Default]), UsedName(fighters,[Default]).[0m
-[0m[[0m[0mdebug[0m] [0m[0m	> by transitive inheritance: Set(dragonBallZ.model.Team)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	> [0m
-[0m[[0m[0mdebug[0m] [0m[0m	> by member reference: Set(dragonBallZ.HandleMisionService)[0m
-[0m[[0m[0mdebug[0m] [0m[0m        [0m
-[0m[[0m[0mdebug[0m] [0m[0mInvalidating (transitively) by inheritance from dragonBallZ.model.Mision...[0m
-[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: Set(dragonBallZ.model.Mision)[0m
-[0m[[0m[0mdebug[0m] [0m[0mInvalidated by transitive inheritance dependency: Set(dragonBallZ.model.Mision)[0m
-[0m[[0m[0mdebug[0m] [0m[0mThe following modified names cause invalidation of dragonBallZ.HandleMisionService: Set(UsedName(substractEnergy,[Default]), UsedName(fighters,[Default]))[0m
-[0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of dragonBallZ.Main. This dependency is not being considered for invalidation.[0m
-[0m[[0m[0mdebug[0m] [0m[0mChange NamesChange(dragonBallZ.model.Mision,ModifiedNames(changes = UsedName(getFighters,[Default]), UsedName(substractEnergy,[Default]), UsedName(fighters,[Default]))) invalidates 2 classes due to The dragonBallZ.model.Mision has the following regular definitions changed:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	UsedName(getFighters,[Default]), UsedName(substractEnergy,[Default]), UsedName(fighters,[Default]).[0m
-[0m[[0m[0mdebug[0m] [0m[0m	> by transitive inheritance: Set(dragonBallZ.model.Mision)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	> [0m
-[0m[[0m[0mdebug[0m] [0m[0m	> by member reference: Set(dragonBallZ.HandleMisionService)[0m
-[0m[[0m[0mdebug[0m] [0m[0m        [0m
 [0m[[0m[0mdebug[0m] [0m[0mNew invalidations:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Set(dragonBallZ.HandleMisionService)[0m
-[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: Set(dragonBallZ.HandleMisionService)[0m
-[0m[[0m[0mdebug[0m] [0m[0mIncluding dragonBallZ.Main by dragonBallZ.HandleMisionService[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0mPreviously invalidated, but (transitively) depend on new invalidations:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0mAll newly invalidated classes after taking into account (previously) recompiled classes:Set()[0m

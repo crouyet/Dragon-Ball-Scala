@@ -33,16 +33,16 @@ object Main {
 
     ///////////***************////////
 
-    val dormir: Mision = Mision("Dormir", 300,
+    val dormir: Mision = Mision("Dormir", 30,
       List(
         Activity("Tomar te", 25),
-        Activity("Acostarse", 10),
+        Activity("Acostarse", 100),
         Activity("Apagar la luz", 45))
     ) //105
-    val comer: Mision = Mision("Comer", 150,
+    val comer: Mision = Mision("Comer", 15,
       List(
         Activity("Pedir el rappi", 5),
-        Activity("Comer", 10),
+        Activity("Comer", 90),
         Activity("Limpiar", 45))
     ) //20
 
@@ -62,10 +62,14 @@ object Main {
 
     val misionHandler: HandleMisionService = HandleMisionService(List(dormir, comer))
 
-    printlnWhite("ApplyTeamAction: "+ misionHandler.applyTeamAction(jovenes))
-    println()
+    printlnWhite("Dormir y Comer: "+ misionHandler.applyTeamAction(jovenes)+ "\n")
     //println("Warriors Left " + jovenes.name + ": " +  misionHandler.fight(Some(jovenes),sub21)+ "\n")
     //println("Warriors Left " + sub21.name + ": " + misionHandler.fight(Some(sub21),jovenes)+ "\n\n")
-    printlnWhite("Better Team For The Mision: " + misionHandler.betterTeamForTheMision(buenos, sub21))
+    printlnWhite("Better For The Mision "+buenos.name + " o "+ sub21.name +": "+ misionHandler.betterTeamForTheMision(buenos, sub21)+ "\n\n")
+
+
+    val detenerFreezerHandler: HandleMisionService = HandleMisionService(List(detenerFreezer))
+    printlnWhite("Detener Freezer: "+ detenerFreezerHandler.applyTeamAction(buenos)+ "\n")
+    printlnWhite("Better For The Mision "+jovenes.name + " o "+ sub21.name +": "+ detenerFreezerHandler.betterTeamForTheMision(jovenes, sub21))
   }
 }

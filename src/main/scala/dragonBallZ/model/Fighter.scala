@@ -4,8 +4,9 @@ trait Fighter {
   val name: String
   val energy: Int
 
-  def fight(vs: Fighter): Option[Fighter]
+  def fight(energy: Int): Option[Fighter] =
+    Option(this.substractEnergy(energy)).filter(_.energy > 0)
 
-  def substractEnergy(fighter: Fighter): Fighter
+  def substractEnergy(energy: Int): Fighter
 
 }

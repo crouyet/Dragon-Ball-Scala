@@ -32,17 +32,20 @@ case class HandleMisionService(misions: List[Mision]) {
     misions.foldLeft(Option(group))((group: Option[Team], vs: Mision) => fight(group, vs))
   }
 
-  def fight(team: Option[Team], vs: Group): Option[Team] = {
-    def loop(group: Option[Team], vs: Option[Group]): Option[Team] = group.flatMap(
-      t1 => t1.fighters match {
-        case Nil   => group
-        case h1::_ => vs.flatMap(
-          t2 => t2.fighters match {
-            case Nil   => group
-            case h2::_ =>
-              loop(t1.fight(h2), Some(t2.substractEnergy(h1)))
+  def fight(team: Option[Team], mision: Mision): Option[Team] = {
+    def loop(team: Option[Team], mision: Option[Mision]): Option[Team] = team.flatMap(
+      t => t.fighters match {
+        case Nil   => team
+        case _ if mision.isEmpty  => team
+        case _ => mision.flatMap(
+          m => {
+            val h2::_ = m.fighters
+            val team = t.fight(h2.energy)
+            val energy = team.flatMap(_.movementToUse.map(_.damage)).getOrElse(0)
+            val mision = m.fight(energy)
+            loop(team, mision)
           })
       })
-    loop(team,Some(vs))
+    loop(team,Some(mision))
   }
 }

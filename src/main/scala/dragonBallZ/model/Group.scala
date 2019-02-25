@@ -4,9 +4,7 @@ trait Group extends Fighter {
 
   def fighters: List[Fighter]
 
-  override def fight(vs: Fighter): Option[Group]
-
-  override def substractEnergy(fighter: Fighter): Group
+  override def substractEnergy(energy: Int): Group
 
   def compare(f: (Group, Option[Group]) => Int, vs: Option[Group]): Option[Group] =  f(this, vs) match {
     case 0  => None

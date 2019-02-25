@@ -1,10 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0m/Users/camila.rouyet/DESPEGAR/estudio/scala/src/main/scala/dragonBallZ/model/Warrior.scala:3:12: class Warrior needs to be abstract, since method substractEnergy in trait Fighter of type (fighter: dragonBallZ.model.Fighter)dragonBallZ.model.Fighter is not defined[0m
-[0m[[0m[31merror[0m] [0m[0m(Note that dragonBallZ.model.Fighter does not match Int)[0m
-[0m[[0m[31merror[0m] [0m[0mcase class Warrior(name: String, lifePoints: Int, energy: Int, movements: List[Movement]) extends Fighter {[0m
-[0m[[0m[31merror[0m] [0m[0m           ^[0m
-[0m[[0m[31merror[0m] [0m[0m/Users/camila.rouyet/DESPEGAR/estudio/scala/src/main/scala/dragonBallZ/model/Warrior.scala:5:16: method substractEnergy overrides nothing.[0m
-[0m[[0m[31merror[0m] [0m[0mNote: the super classes of class Warrior contain the following, non final members named substractEnergy:[0m
-[0m[[0m[31merror[0m] [0m[0mdef substractEnergy(fighter: dragonBallZ.model.Fighter): dragonBallZ.model.Fighter[0m
-[0m[[0m[31merror[0m] [0m[0m  override def substractEnergy(energy: Int): Warrior = this.copy(energy = this.energy - energy)[0m
-[0m[[0m[31merror[0m] [0m[0m               ^[0m
-[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/camila.rouyet/DESPEGAR/estudio/scala/src/main/scala/dragonBallZ/model/Warrior.scala:6:89: No implicit Ordering defined for dragonBallZ.model.Movement.[0m
+[0m[[0m[31merror[0m] [0m[0m  def movementToUse: Option[Movement] = Option(movements.filter(m => m.damage > energy).max)[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                        ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
