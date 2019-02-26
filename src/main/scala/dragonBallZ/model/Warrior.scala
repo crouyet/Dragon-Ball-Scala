@@ -1,6 +1,6 @@
 package dragonBallZ.model
 
-case class Warrior(name: String, lifePoints: Int, energy: Int, movements: List[Movement]) extends Fighter {
+case class Warrior(name: String, lifePoints: Int, energy: Int, movements: List[Movement]) extends Fighter[Warrior] {
 
   def rest: Int = -100
   def movementToUse: Option[Movement] =
